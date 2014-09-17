@@ -9,7 +9,10 @@ chain n
   | even n = n:chain (n `div` 2)
   | odd n = n:chain(n * 3 + 1)
 
--- for all numbers between 1 and 100, how many chains
--- are there that start with those numbers and are longer
--- than 15 steps long?
+-- for every number n between 1 and 100, how many chains
+-- are there that start with n and are longer
+-- than 15 numbers lon?
+
+longerThan15collatzSequences :: Int
+longerThan15collatzSequences = length (filter (\xs -> length xs > 15) (map chain [1..100]))
 
